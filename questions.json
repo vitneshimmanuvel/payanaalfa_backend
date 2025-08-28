@@ -1,0 +1,202 @@
+{
+  "flows": {
+    "main": {
+      "questions": {
+        "welcome": {
+          "id": "welcome",
+          "message": "Hi welcome to PayanaOverseas! How can I assist you today?",
+          "type": "options",
+          "options": [
+            { "text": "I want to study abroad", "value": "study_abroad", "next": "name" },
+            { "text": "I need consultation", "value": "consultation", "next": "consultation_type" },
+            { "text": "Other inquiries", "value": "other", "next": "other_inquiry" }
+          ]
+        },
+        "name": {
+          "id": "name",
+          "message": "Great! Let's get started. Please enter your full name:",
+          "type": "input",
+          "validation": "required",
+          "next": "age"
+        },
+        "age": {
+          "id": "age", 
+          "message": "Please enter your age:",
+          "type": "input",
+          "validation": "number",
+          "next": "phone"
+        },
+        "phone": {
+          "id": "phone",
+          "message": "Please enter your phone number:",
+          "type": "input", 
+          "validation": "phone",
+          "next": "email"
+        },
+        "email": {
+          "id": "email",
+          "message": "Please enter your email address:",
+          "type": "input",
+          "validation": "email", 
+          "next": "education_level"
+        },
+        "education_level": {
+          "id": "education_level",
+          "message": "What is your current education level?",
+          "type": "options",
+          "options": [
+            { "text": "12th Grade", "value": "12th", "next": "ug_programs" },
+            { "text": "Undergraduate", "value": "ug", "next": "ug_major" },
+            { "text": "Graduate", "value": "grad", "next": "grad_programs" },
+            { "text": "Other", "value": "other", "next": "other_education" }
+          ]
+        },
+        "ug_programs": {
+          "id": "ug_programs",
+          "message": "Which undergraduate program are you interested in?",
+          "type": "options",
+          "options": [
+            { "text": "Engineering", "value": "engineering", "next": "country_preference" },
+            { "text": "Business", "value": "business", "next": "country_preference" },
+            { "text": "Arts & Sciences", "value": "arts_sciences", "next": "country_preference" },
+            { "text": "Medicine", "value": "medicine", "next": "country_preference" }
+          ]
+        },
+        "ug_major": {
+          "id": "ug_major",
+          "message": "What is your major/field of study?",
+          "type": "input",
+          "validation": "required",
+          "next": "grad_programs"
+        },
+        "grad_programs": {
+          "id": "grad_programs", 
+          "message": "Which graduate program are you interested in?",
+          "type": "options",
+          "options": [
+            { "text": "Masters in Engineering", "value": "ms_engineering", "next": "country_preference" },
+            { "text": "MBA", "value": "mba", "next": "country_preference" },
+            { "text": "Masters in Science", "value": "ms_science", "next": "country_preference" },
+            { "text": "PhD", "value": "phd", "next": "country_preference" }
+          ]
+        },
+        "country_preference": {
+          "id": "country_preference",
+          "message": "Which country are you interested in studying?",
+          "type": "options", 
+          "options": [
+            { "text": "USA", "value": "usa", "next": "budget" },
+            { "text": "Canada", "value": "canada", "next": "budget" },
+            { "text": "Germany", "value": "germany", "next": "german_language" },
+            { "text": "UK", "value": "uk", "next": "budget" },
+            { "text": "Australia", "value": "australia", "next": "budget" }
+          ]
+        },
+        "german_language": {
+          "id": "german_language",
+          "message": "Do you speak German?",
+          "type": "options",
+          "options": [
+            { "text": "Yes, fluently", "value": "fluent", "next": "budget" },
+            { "text": "Basic level", "value": "basic", "next": "budget" },
+            { "text": "No, but willing to learn", "value": "willing", "next": "budget" },
+            { "text": "No", "value": "no", "next": "english_programs_germany" }
+          ]
+        },
+        "english_programs_germany": {
+          "id": "english_programs_germany",
+          "message": "Great! Germany has many excellent English-taught programs. Would you like information about English programs in Germany?",
+          "type": "options",
+          "options": [
+            { "text": "Yes", "value": "yes", "next": "budget" },
+            { "text": "Maybe later", "value": "later", "next": "budget" }
+          ]
+        },
+        "budget": {
+          "id": "budget",
+          "message": "What is your budget range for studying abroad (per year)?",
+          "type": "options",
+          "options": [
+            { "text": "Under $20,000", "value": "under_20k", "next": "timeline" },
+            { "text": "$20,000 - $50,000", "value": "20k_50k", "next": "timeline" },
+            { "text": "$50,000 - $80,000", "value": "50k_80k", "next": "timeline" },
+            { "text": "Above $80,000", "value": "above_80k", "next": "timeline" }
+          ]
+        },
+        "timeline": {
+          "id": "timeline",
+          "message": "When are you planning to start your studies?",
+          "type": "options",
+          "options": [
+            { "text": "Next semester", "value": "next_semester", "next": "services" },
+            { "text": "Next academic year", "value": "next_year", "next": "services" },
+            { "text": "In 2 years", "value": "two_years", "next": "services" },
+            { "text": "Not decided yet", "value": "not_decided", "next": "services" }
+          ]
+        },
+        "services": {
+          "id": "services",
+          "message": "What services would you like assistance with?",
+          "type": "multi_select",
+          "options": [
+            { "text": "University selection", "value": "university_selection" },
+            { "text": "Application process", "value": "application" },
+            { "text": "Visa assistance", "value": "visa" },
+            { "text": "Scholarship guidance", "value": "scholarship" },
+            { "text": "Accommodation", "value": "accommodation" }
+          ],
+          "next": "consultation_preference"
+        },
+        "consultation_preference": {
+          "id": "consultation_preference",
+          "message": "How would you like to receive consultation?",
+          "type": "options",
+          "options": [
+            { "text": "Schedule a video call", "value": "video_call", "next": "schedule_meeting" },
+            { "text": "Email consultation", "value": "email", "next": "email_preference" },
+            { "text": "Phone call", "value": "phone_call", "next": "phone_consultation" }
+          ]
+        },
+        "schedule_meeting": {
+          "id": "schedule_meeting",
+          "message": "Perfect! I'll help you schedule a video consultation. When would be the best time for you?",
+          "type": "options",
+          "options": [
+            { "text": "Morning (9 AM - 12 PM)", "value": "morning", "next": "meeting_day" },
+            { "text": "Afternoon (12 PM - 5 PM)", "value": "afternoon", "next": "meeting_day" },
+            { "text": "Evening (5 PM - 8 PM)", "value": "evening", "next": "meeting_day" }
+          ]
+        },
+        "meeting_day": {
+          "id": "meeting_day",
+          "message": "Which day works best for you?",
+          "type": "options",
+          "options": [
+            { "text": "Tomorrow", "value": "tomorrow", "next": "final_meeting" },
+            { "text": "This week", "value": "this_week", "next": "final_meeting" },
+            { "text": "Next week", "value": "next_week", "next": "final_meeting" }
+          ]
+        },
+        "email_preference": {
+          "id": "email_preference", 
+          "message": "Great! We'll send you detailed information via email. Is there anything specific you'd like us to focus on?",
+          "type": "input",
+          "validation": "optional",
+          "next": "final_email"
+        },
+        "final_meeting": {
+          "id": "final_meeting",
+          "message": "Excellent! We'll send you a Google Meet link and calendar invitation shortly. Our consultant will contact you to confirm the exact time. Thank you for choosing PayanaOverseas!",
+          "type": "final",
+          "action": "schedule_meeting"
+        },
+        "final_email": {
+          "id": "final_email", 
+          "message": "Perfect! We'll send you comprehensive information about study abroad opportunities matching your preferences. Check your email in the next few minutes. Thank you for choosing PayanaOverseas!",
+          "type": "final",
+          "action": "send_email"
+        }
+      }
+    }
+  }
+}
