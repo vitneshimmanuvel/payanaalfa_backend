@@ -517,7 +517,9 @@ const questionNodes = {
     text: 'Thank you for providing all the information!',
     dataField: null,
     tags: ['result', 'final', 'work_path'],
-    weight: -20
+    weight: -20,
+    bitta : alfa .
+
   }
 };
 
